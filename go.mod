@@ -1,4 +1,4 @@
-module proto-contracts
+module github.com/D2CFoundry/proto-contracts
 
 go 1.26.1
 
