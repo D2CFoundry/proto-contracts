@@ -66,6 +66,7 @@ message ICECandidatePayload {
 message JoinRoomRequest {
   string room_id = 1;
   string client_id = 2;
+  string client_role = 3;
 }
 
 message JoinRoomAck {

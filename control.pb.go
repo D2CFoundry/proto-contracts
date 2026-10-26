@@ -510,6 +510,7 @@ type JoinRoomRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RoomId        string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
 	ClientId      string                 `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientRole    string                 `protobuf:"bytes,3,opt,name=client_role,json=clientRole,proto3" json:"client_role,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -554,6 +555,13 @@ func (x *JoinRoomRequest) GetRoomId() string {
 func (x *JoinRoomRequest) GetClientId() string {
 	if x != nil {
 		return x.ClientId
+	}
+	return ""
+}
+
+func (x *JoinRoomRequest) GetClientRole() string {
+	if x != nil {
+		return x.ClientRole
 	}
 	return ""
 }
@@ -1319,10 +1327,12 @@ const file_control_proto_rawDesc = "" +
 	"\x13ICECandidatePayload\x12\x17\n" +
 	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
 	"\tclient_id\x18\x02 \x01(\tR\bclientId\x123\n" +
-	"\tcandidate\x18\x03 \x01(\v2\x15.control.ICECandidateR\tcandidate\"G\n" +
+	"\tcandidate\x18\x03 \x01(\v2\x15.control.ICECandidateR\tcandidate\"h\n" +
 	"\x0fJoinRoomRequest\x12\x17\n" +
 	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
-	"\tclient_id\x18\x02 \x01(\tR\bclientId\"\x82\x01\n" +
+	"\tclient_id\x18\x02 \x01(\tR\bclientId\x12\x1f\n" +
+	"\vclient_role\x18\x03 \x01(\tR\n" +
+	"clientRole\"\x82\x01\n" +
 	"\vJoinRoomAck\x12\x17\n" +
 	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
 	"\tclient_id\x18\x02 \x01(\tR\bclientId\x12\x18\n" +
